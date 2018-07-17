@@ -1,7 +1,9 @@
 package main
 
 import (
+	"image"
 	"image/jpeg"
+	_ "image/png"
 	"log"
 	"os"
 )
@@ -17,7 +19,7 @@ func main() {
 	}
 	defer infile.Close()
 
-	img, err := jpeg.Decode(infile)
+	img, _, err := image.Decode(infile)
 	if err != nil {
 		log.Fatal(err)
 		panic(err)
