@@ -1,0 +1,15 @@
+sudo: false
+
+language: go
+
+go:
+  - 1.10.x
+
+git:
+  depth: 1
+
+install:
+  - go get -v -t ./...
+
+script:
+  - go test -v ./...
